@@ -1,0 +1,211 @@
+/* Professional, unique, and responsive styles with a light color palette */
+
+:root {
+  --primary-bg: #f4fafc;
+  --secondary-bg: #ffffff;
+  --accent: #6ec1e4;
+  --accent-dark: #3a8dad;
+  --text-main: #22223b;
+  --text-muted: #6c757d;
+  --border: #e0e7ef;
+  --success: #7ed6a7;
+  --danger: #ff6b6b;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: var(--primary-bg);
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+.App {
+  max-width: 700px;
+  margin: 32px auto;
+  padding: 32px 20px;
+  background: var(--secondary-bg);
+  border-radius: 18px;
+  box-shadow: 0 4px 24px rgba(110, 193, 228, 0.07);
+}
+
+header {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+header h1 {
+  margin: 0 0 6px 0;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--accent-dark);
+  letter-spacing: 1px;
+}
+
+header p {
+  margin: 0;
+  color: var(--text-muted);
+  font-size: 1.08rem;
+}
+
+.task-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+#inp {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--secondary-bg);
+  box-shadow: 0 1px 4px rgba(110, 193, 228, 0.04);
+}
+
+#inp input {
+  flex: 1;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  font-size: 1rem;
+  color: var(--text-main);
+}
+
+#inp button {
+  border: 0;
+  background: var(--accent);
+  color: #fff;
+  padding: 9px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.2s;
+}
+#inp button:hover {
+  background: var(--accent-dark);
+}
+
+#btns {
+  display: flex;
+  gap: 10px;
+}
+
+#btns select {
+  padding: 9px 14px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--secondary-bg);
+  color: var(--text-main);
+  font-size: 1rem;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.task-list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--secondary-bg);
+  margin-bottom: 10px;
+  box-shadow: 0 1px 4px rgba(110, 193, 228, 0.03);
+  transition: box-shadow 0.2s;
+}
+.task-list li:hover {
+  box-shadow: 0 2px 8px rgba(110, 193, 228, 0.08);
+}
+
+.task-list li.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+  color: var(--text-muted);
+  background: #eaf7f2;
+}
+
+.task-list button {
+  background: none;
+  border: 0;
+  color: var(--accent-dark);
+  cursor: pointer;
+  padding: 7px 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: background 0.2s, color 0.2s;
+}
+.task-list button:hover {
+  background: #e3f3fa;
+  color: var(--accent);
+}
+
+.progress-tracker {
+  margin-top: 20px;
+}
+
+.progress-bar {
+  height: 10px;
+  background: #e3f3fa;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.progress {
+  height: 100%;
+  background: var(--success);
+  transition: width 0.3s;
+}
+
+.clear-btn {
+  margin-top: 20px;
+  background: var(--danger);
+  color: #fff;
+  border: 0;
+  padding: 12px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: background 0.2s;
+}
+.clear-btn:hover {
+  background: #ff4c4c;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .App {
+    padding: 16px 4px;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .task-form {
+    flex-direction: column;
+    gap: 8px;
+  }
+  #btns {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .task-list li {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 12px 8px;
+  }
+}
